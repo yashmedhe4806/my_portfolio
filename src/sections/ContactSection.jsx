@@ -31,34 +31,34 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#ECE9DF]">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto border-t border-[#ECE9DF]">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* Left Intro Text */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-4 sm:space-y-6">
           <span className="text-xs font-mono text-[#8BCF5B] uppercase tracking-wider font-semibold">
             INITIATE CONVERSATION
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-[#20221F] leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-[#20221F] leading-tight">
             Tell me what you're trying to build.
           </h2>
-          <p className="text-base text-[#686C63] leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-[#686C63] leading-relaxed">
             You bring the problem. We can figure out the next step from there.
           </p>
 
-          <div className="bg-[#ECE9DF]/60 p-6 rounded-2xl border border-[#ECE9DF] space-y-3">
+          <div className="bg-[#ECE9DF]/60 p-5 sm:p-6 rounded-2xl border border-[#ECE9DF] space-y-3">
             <span className="text-xs font-mono font-bold text-[#20221F] uppercase block">
               WHAT HAPPENS NEXT?
             </span>
             <ul className="space-y-2 text-xs font-mono text-[#686C63]">
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2">
                 <span className="text-[#8BCF5B] font-bold">1.</span>
                 <span>I read your submission carefully within 24 hours.</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2">
                 <span className="text-[#8BCF5B] font-bold">2.</span>
                 <span>We discuss the problem before suggesting any scope.</span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2">
                 <span className="text-[#8BCF5B] font-bold">3.</span>
                 <span>If aligned, we outline a pragmatic roadmap.</span>
               </li>
@@ -67,7 +67,7 @@ export const ContactSection = () => {
         </div>
 
         {/* Right Ant Design Form */}
-        <div className="lg:col-span-7 bg-[#F7F5EF] p-8 md:p-10 rounded-3xl border border-[#ECE9DF] shadow-sm">
+        <div className="lg:col-span-7 bg-[#F7F5EF] p-5 sm:p-8 md:p-10 rounded-3xl border border-[#ECE9DF] shadow-sm w-full">
           <ConfigProvider
             theme={{
               token: {
@@ -84,15 +84,15 @@ export const ContactSection = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="py-12 text-center space-y-4"
+                className="py-8 sm:py-12 text-center space-y-4"
               >
-                <div className="w-16 h-16 rounded-full bg-[#8BCF5B]/20 text-[#8BCF5B] flex items-center justify-center mx-auto">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#8BCF5B]/20 text-[#8BCF5B] flex items-center justify-center mx-auto">
                   <CheckCircle2 size={36} />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-[#20221F]">
+                <h3 className="text-xl sm:text-2xl font-display font-bold text-[#20221F]">
                   Message Received.
                 </h3>
-                <p className="text-sm text-[#686C63] max-w-md mx-auto">
+                <p className="text-xs sm:text-sm text-[#686C63] max-w-md mx-auto">
                   Thanks for sharing your goals. I will review your submission and reply with initial thoughts soon.
                 </p>
                 <Button
@@ -100,7 +100,7 @@ export const ContactSection = () => {
                     setSubmitted(false);
                     form.resetFields();
                   }}
-                  className="mt-4 font-mono text-xs font-bold uppercase tracking-wider"
+                  className="mt-4 font-mono text-xs font-bold uppercase tracking-wider min-h-[44px]"
                 >
                   Send another message
                 </Button>
@@ -164,13 +164,13 @@ export const ContactSection = () => {
                   </Select>
                 </Form.Item>
 
-                <Form.Item className="pt-2">
+                <Form.Item className="pt-2 mb-0">
                   <Button
                     type="primary"
                     htmlType="submit"
                     loading={loading}
                     block
-                    className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide"
+                    className="flex items-center justify-center gap-2 text-sm font-semibold tracking-wide min-h-[48px]"
                   >
                     <span>Start a conversation →</span>
                   </Button>

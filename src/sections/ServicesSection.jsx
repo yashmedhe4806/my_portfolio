@@ -39,21 +39,21 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#ECE9DF]">
-      <div className="space-y-4 max-w-2xl mb-16">
+    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto border-t border-[#ECE9DF]">
+      <div className="space-y-3 sm:space-y-4 max-w-2xl mb-10 sm:mb-16">
         <span className="text-xs font-mono text-[#8BCF5B] uppercase tracking-wider font-semibold">
           CAPABILITIES
         </span>
-        <h2 className="text-3xl md:text-5xl font-display font-bold text-[#20221F]">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-[#20221F]">
           Services & Capabilities
         </h2>
-        <p className="text-sm md:text-base text-[#686C63]">
-          Click or hover over any service below to explore how engineering and marketing context work together.
+        <p className="text-xs sm:text-sm md:text-base text-[#686C63]">
+          Click or select any service below to explore how engineering and marketing context work together.
         </p>
       </div>
 
       {/* Expandable Visual List */}
-      <div className="space-y-4 max-w-4xl">
+      <div className="space-y-3 sm:space-y-4 max-w-4xl">
         {services.map((s, idx) => {
           const isExpanded = expandedIndex === idx;
           return (
@@ -65,25 +65,26 @@ export const ServicesSection = () => {
             >
               <button
                 onClick={() => setExpandedIndex(isExpanded ? null : idx)}
-                className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
+                className="w-full p-4 sm:p-6 text-left flex items-center justify-between focus:outline-none min-h-[52px]"
                 data-cursor="nav"
                 data-cursor-label={isExpanded ? 'CLOSE' : 'OPEN'}
+                aria-expanded={isExpanded}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 sm:gap-4 pr-2">
                   <span className={`text-xs font-mono font-bold ${isExpanded ? 'text-[#8BCF5B]' : 'text-[#686C63]'}`}>
                     0{idx + 1}
                   </span>
                   <div>
-                    <h3 className="text-xl md:text-2xl font-display font-bold">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-display font-bold">
                       {s.title}
                     </h3>
-                    <p className={`text-xs md:text-sm font-sans ${isExpanded ? 'text-gray-300' : 'text-[#686C63]'}`}>
+                    <p className={`text-xs sm:text-sm font-sans ${isExpanded ? 'text-gray-300' : 'text-[#686C63]'}`}>
                       {s.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform ${isExpanded ? 'bg-[#8BCF5B] text-[#20221F] rotate-180' : 'bg-[#ECE9DF] text-[#20221F]'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform ${isExpanded ? 'bg-[#8BCF5B] text-[#20221F] rotate-180' : 'bg-[#ECE9DF] text-[#20221F]'}`}>
                   <ChevronDown size={18} />
                 </div>
               </button>
@@ -95,9 +96,9 @@ export const ServicesSection = () => {
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="overflow-hidden px-6 pb-6 pt-2 border-t border-white/10"
+                    className="overflow-hidden px-4 sm:px-6 pb-5 sm:pb-6 pt-2 border-t border-white/10"
                   >
-                    <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
+                    <p className="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed mb-5">
                       {s.desc}
                     </p>
 

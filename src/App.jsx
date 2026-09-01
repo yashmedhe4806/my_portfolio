@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
+import { ThemeCustomizer } from './components/ThemeCustomizer';
 import { IntroSequence } from './components/IntroSequence';
 import { MainIntroSection } from './sections/MainIntroSection';
 import { FiguringOut } from './sections/FiguringOut';
@@ -68,9 +69,12 @@ export default function App() {
   }, [introActive]);
 
   return (
-    <div className="min-h-screen bg-[#F7F5EF] text-[#20221F] font-sans relative selection:bg-[#C9F36B] selection:text-[#20221F]">
+    <div className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-sans relative selection:bg-[var(--accent-lime)] selection:text-[var(--bg-dark)]">
       {/* Desktop Custom Cursor */}
       <CustomCursor />
+
+      {/* Persistent Theme Customizer */}
+      <ThemeCustomizer />
 
       {/* Opening 8-Scene Cinematic Sequence */}
       {introActive ? (

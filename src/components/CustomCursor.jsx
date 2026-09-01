@@ -9,8 +9,9 @@ export const CustomCursor = () => {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    // Detect touch device
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    // Detect touch device or non-pointer environment
+    const isCoarse = window.matchMedia('(pointer: coarse)').matches || window.matchMedia('(hover: none)').matches;
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0 || isCoarse || window.innerWidth < 1024) {
       setIsTouchDevice(true);
       return;
     }
